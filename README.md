@@ -5,6 +5,8 @@
 ## 🔢 Features
 
 - Display menu items with descriptions and pricing
+- Suggest the dishes for the day 
+- Chose the dishes from the map according to the area and timing
 - User registration and authentication
 - Add items to cart and place orders
 - Admin panel to manage menu and view orders
@@ -28,54 +30,84 @@
 
 ## ✅ Requirements
 
-- PHP 7.4 or higher
-- Composer
-- Web server (Apache or Nginx)
-- MySQL or MariaDB database
+* PHP 7.4 or higher
+* Composer
+* Web server (Apache or Nginx) or XAMPP
+* MySQL or MariaDB database
 
 ## ⚖️ Installation & Setup
 
-### 1. Clone the repository
+### Option 1: Using XAMPP (Recommended for Local Development)
 
-```bash
-git clone https://github.com/Deepansh-kushwaha/hungerassistant.git
-cd hungerassistant
-```
+1. **Download and install XAMPP** from [https://www.apachefriends.org/index.html](https://www.apachefriends.org/index.html)
+2. **Start Apache and MySQL** using the XAMPP Control Panel
+3. **Clone the repository** into the `htdocs` directory:
 
-### 2. Install Composer dependencies
+   ```bash
+   cd C:/xampp/htdocs
+   git clone https://github.com/Deepansh-kushwaha/hungerassistant.git
+   ```
+4. **Import the database**:
 
-```bash
-composer install
-```
+   * Open `http://localhost/phpmyadmin`
+   * Create a new database named `hungerassistant`
+   * Go to the `Import` tab and upload `backup/hungerassistant_backup.sql`
+5. **Configure `.env` file**:
 
-*If **`composer.json`** is missing, skip this step.*
+   * Copy `.env.example` to `.env`
+   * Update DB credentials:
 
-### 3. Create the database
+     ```env
+     DB_HOST=127.0.0.1
+     DB_NAME=hungerassistant
+     DB_USER=root
+     DB_PASS=
+     ```
+6. **Access the application**:
 
-```sql
-CREATE DATABASE hungerassistant CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
+   * Visit `http://localhost/hungerassistant/src/public`
 
-### 4. Import database from backup
+### Option 2: Using Apache/Nginx Manually
 
-```bash
-mysql -u <db_user> -p hungerassistant < backup/hungerassistant_backup.sql
-```
+1. **Clone the repository**
 
-### 5. Configure environment
+   ```bash
+   git clone https://github.com/Deepansh-kushwaha/hungerassistant.git
+   cd hungerassistant
+   ```
 
-Copy `.env.example` and update database credentials:
+2. **Install Composer dependencies**
 
-```env
-DB_HOST=127.0.0.1
-DB_NAME=hungerassistant
-DB_USER=your_db_user
-DB_PASS=your_db_password
-```
+   ```bash
+   composer install
+   ```
 
-### 6. Set document root
+   *If `composer.json` is missing, skip this step.*
 
-Point your web server to the `src/public` directory.
+3. **Create the database**
+
+   ```sql
+   CREATE DATABASE hungerassistant CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+   ```
+
+4. **Import database from backup**
+
+   ```bash
+   mysql -u <db_user> -p hungerassistant < backup/hungerassistant_backup.sql
+   ```
+
+5. **Configure environment**
+   Copy `.env.example` and update database credentials:
+
+   ```env
+   DB_HOST=127.0.0.1
+   DB_NAME=hungerassistant
+   DB_USER=your_db_user
+   DB_PASS=your_db_password
+   ```
+
+6. **Set document root**
+   Point your web server to the `src/public` directory.
 
 #### Apache:
 
@@ -94,16 +126,14 @@ root /path/to/hungerassistant/src/public;
 index index.php index.html;
 ```
 
-### 7. Composer Autoload
+7. **Composer Autoload**
 
 ```bash
 cd src
 composer dump-autoload
 ```
 
-### 8. Start the application
-
-**Development mode:**
+8. **Start the application** (Development mode):
 
 ```bash
 cd src/public
@@ -114,9 +144,9 @@ Visit [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## 💡 Usage
 
-- Register a new user or log in
-- Browse menu items, add to cart, and check out
-- Admins can navigate to `/admin` to manage content
+* Register a new user or log in
+* Browse menu items, add to cart, and check out
+* Admins can navigate to `/admin` to manage content
 
 ## ⚙️ Configuration
 
@@ -129,10 +159,10 @@ Visit [http://localhost:8000](http://localhost:8000) in your browser.
 
 ## 📄 Database Schema
 
-- `users` - Stores user information
-- `menu_items` - Contains menu details
-- `orders` - Tracks orders
-- `order_items` - Links orders with menu items
+* `users` - Stores user information
+* `menu_items` - Contains menu details
+* `orders` - Tracks orders
+* `order_items` - Links orders with menu items
 
 Schema details can be found in `backup/hungerassistant_backup.sql`.
 
@@ -151,4 +181,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📱 Contact
 
 For queries or suggestions, open an issue or reach out via GitHub Discussions.
-
