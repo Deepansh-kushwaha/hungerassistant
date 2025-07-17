@@ -489,12 +489,8 @@ CREATE TABLE `hungry-peoples` (
 --
 
 INSERT INTO `hungry-peoples` (`Sno`, `Username`, `Email`, `Phone`, `role`, `Passward`, `Time`) VALUES
-(16, 'Deepansh', 'deepanshkushwaha9@gmail.com', '7217429310', 1, '$2y$10$dyJVIpRAE3JKNydj.uXTkumwXqQGxA2ZOGUU.B845iuRnjCTfF7ae', '2021-08-03 17:00:59'),
-(17, 'Archana', 'archanakushwaha918@gmail.com', '9045850731', 0, '$2y$10$i7MYK1A0u7sRpw.YMNPbquGDxp5AZmrw1RDiJO/CTEnsXKU.WbYlC', '2021-08-10 02:22:19'),
-(18, 'Rajesh kush', 'rajeshkumarkushwaha198@gmail.com', '9421631571', 0, '$2y$10$k0YVkloqtTj7lnKMfbxoDOCoySNZyxd9.7sUrQkmsHa4wPSOBRo2a', '2021-08-10 02:28:54'),
-(19, 'Sunil50', 'Sunilkushwaha50@gmail.com', '9634047806', 0, '$2y$10$JHfoLN2biB6aJRQJ.j.vgekJcr/BTGPsysrgTg1Z5lE6e1OtYekjS', '2021-08-10 13:56:28'),
-(20, 'Ashi', 'ashishkumar14031990@gmail.com', '7078344303', 1, '$2y$10$Ypl2tbpGA.E4ZVeDJl6OS.GDBKeMJ.5Wc5hYNsCCiiQJ2SH7WWSUK', '2021-08-12 15:07:26'),
-(21, 'Nitish', 'npal3248@gmail.com', '9412016828', 0, '$2y$10$42pMLSsK5xH2x7L0.WSmK.VEpmETZPjIQdryotYCs6L6heSlL/bdm', '2021-09-03 05:55:35');
+(16, 'Deepansh', 'deepanshkushwaha@gmail.com', '721', 1, '$2y$10$dyJVIpRAE3JKNydj.uXTkumwXqQGxA2ZOGUU.B845iuRnjCTfF7ae', '2021-08-03 17:00:59');
+
 
 -- --------------------------------------------------------
 
